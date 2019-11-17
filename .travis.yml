@@ -3,20 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t jaaf9/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t joseandrade2/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true jaaf9/react-test npm test
+  - docker run -e CI=true joseandrade2/react-test npm test
 
 after_success:
-  - docker build -t jaaf9/multi-client ./client
-  - docker build -t jaaf9/multi-nginx ./nginx
-  - docker build -t jaaf9/multi-server ./server
-  - docker build -t jaaf9/multi-worker ./worker
+  - docker build -t joseandrade2/multi-client ./client
+  - docker build -t joseandrade2/multi-nginx ./nginx
+  - docker build -t joseandrade2/multi-server ./server
+  - docker build -t joseandrade2/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push jaaf9/multi-client
-  - docker push jaaf9/multi-nginx
-  - docker push jaaf9/multi-server
-  - docker push jaaf9/multi-worker
+  - docker push joseandrade2/multi-client
+  - docker push joseandrade2/multi-nginx
+  - docker push joseandrade2/multi-server
+  - docker push joseandrade2/multi-worker
