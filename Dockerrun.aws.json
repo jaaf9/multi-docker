@@ -4,28 +4,24 @@
         {
             "name": "client",
             "image": "joseandrade2/multi-client",
-            "hostname": "client",
             "essential": false,
             "memory": 128
         },
         {
             "name": "server",
             "image": "joseandrade2/multi-server",
-            "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
             "name": "worker",
             "image": "joseandrade2/multi-worker",
-            "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
             "name": "nginx",
             "image": "joseandrade2/multi-nginx",
-            "hostname": "nginx",
             "essential": true,
             "portMappings": [
                 {
